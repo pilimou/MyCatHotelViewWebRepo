@@ -78,6 +78,38 @@ input[readonly] {
   border-radius: 4px;
 }
 
+/* 自訂折數的包裝容器 */
+.custom-discount-wrap {
+  margin-left: auto;      /* 核心：推擠左側空間，靠最右邊對齊 */
+  display: flex;          /* 內部元件橫向排列 */
+  align-items: center;    /* 垂直置中 */
+  flex-shrink: 0;         /* 不准被壓縮，確保內容不變形 */
+}
+
+/* 折數輸入框 */
+.custom-discount {
+  width: 40px;            /* 因為是折數(如90, 85)，寬度可以設窄一點 */
+  text-align: center;     /* 數值置中顯示 */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 12px;
+  padding: 2px;
+}
+
+/* 【新增】百分比符號樣式 */
+.percent-symbol {
+  margin-left: 5px;       /* 【關鍵】與前面的 inputbox 留一點點距離 */
+  font-size: 13px;        /* 字體大小 */
+  color: #666;            /* 深灰色 */
+  font-weight: bold;      /* 加粗讓符號明顯一點 */
+}
+
+/* 移除數字輸入框 (type="number") 的上下小箭頭（選填，讓畫面更乾淨） */
+.custom-discount::-webkit-outer-spin-button,
+.custom-discount::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
 /* 響應式：如果螢幕太小（如手機），6格會太擠，可以改成 3格 或 2格 */
 @media (max-width: 768px) {

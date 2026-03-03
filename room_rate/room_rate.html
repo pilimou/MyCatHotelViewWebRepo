@@ -67,7 +67,15 @@
                             <label>共 </label>
                             <input type="text" class="night-count" placeholder="0" readonly>
                             <label> 晚</label>
+                            <!-- 【新增】自訂折扣區塊 -->
+                            <div class="custom-discount-wrap">
+                                <label>自訂折扣：</label>
+                                <input type="number" class="custom-discount" placeholder="">
+                                <span class="percent-symbol">%</span>
+                            </div>
                         </div>
+
+                        
                     </div>
 
                     <div class="sub-item room-card">
@@ -99,6 +107,12 @@
                             <label>共 </label>
                             <input type="text" class="night-count" placeholder="0" readonly>
                             <label> 晚</label>
+                            <!-- 【新增】自訂折扣區塊 -->
+                            <div class="custom-discount-wrap">
+                                <label>自訂折扣：</label>
+                                <input type="number" class="custom-discount" placeholder="">
+                                <span class="percent-symbol">%</span>
+                            </div>
                         </div>
                     </div>
 
@@ -131,6 +145,12 @@
                             <label>共 </label>
                             <input type="text" class="night-count" placeholder="0" readonly>
                             <label> 晚</label>
+                            <!-- 【新增】自訂折扣區塊 -->
+                            <div class="custom-discount-wrap">
+                                <label>自訂折扣：</label>
+                                <input type="number" class="custom-discount" placeholder="">
+                                <span class="percent-symbol">%</span>
+                            </div>
                         </div>
                     </div>
 
@@ -163,6 +183,12 @@
                             <label>共 </label>
                             <input type="text" class="night-count" placeholder="0" readonly>
                             <label> 晚</label>
+                            <!-- 【新增】自訂折扣區塊 -->
+                            <div class="custom-discount-wrap">
+                                <label>自訂折扣：</label>
+                                <input type="number" class="custom-discount" placeholder="">
+                                <span class="percent-symbol">%</span>
+                            </div>
                         </div>
                     </div>
 
@@ -195,6 +221,12 @@
                             <label>共 </label>
                             <input type="text" class="night-count" placeholder="0" readonly>
                             <label> 晚</label>
+                            <!-- 【新增】自訂折扣區塊 -->
+                            <div class="custom-discount-wrap">
+                                <label>自訂折扣：</label>
+                                <input type="number" class="custom-discount" placeholder="">
+                                <span class="percent-symbol">%</span>
+                            </div>
                         </div>
                     </div>
 
@@ -227,6 +259,12 @@
                             <label>共 </label>
                             <input type="text" class="night-count" placeholder="0" readonly>
                             <label> 晚</label>
+                            <!-- 【新增】自訂折扣區塊 -->
+                            <div class="custom-discount-wrap">
+                                <label>自訂折扣：</label>
+                                <input type="number" class="custom-discount" placeholder="">
+                                <span class="percent-symbol">%</span>
+                            </div>
                         </div>
                     </div>
                 
@@ -286,8 +324,9 @@
 
             <!-- 第三大區塊 -->
             <section class="section section-3">
-                <h2>>暫定顯示預約狀況</h2>
+                
                 <!--
+                <h>未完成區塊 預定顯示預約資料</h>
                 <div id="product-list">
                     <p id="info"></p>
                     <button id="test">測試送出</button>    
@@ -364,6 +403,7 @@
         let dateStart = $selectedRoom.find('.check-in').val();  // 入住日期
         let dateEnd = $selectedRoom.find('.check-out').val();    // 退房日期
         let nights = $selectedRoom.find('.night-count').val();
+        let rawDiscount = $selectedRoom.find('.custom-discount').val();
         let addCatPrice = 250;
 
         // 3. 檢查日期是否完整填寫
@@ -381,12 +421,17 @@
         }
 
         let nightDiscount = 1;
-        switch (true) {
+        if (rawDiscount !== "" && !isNaN(rawDiscount)) {
+            // 例如輸入 90，轉換成 0.9
+            nightDiscount = parseFloat(rawDiscount) / 100;
+        } else {
+
+            switch (true) {
             case (nights < 3):
-                nightDiscount = 1;
+                nightDiscount = 0.8;
                 break;
             case (nights < 7):
-                nightDiscount = 0.9;
+                nightDiscount = 0.8;
                 break;
             case (nights < 14):
                 nightDiscount = 0.8;
@@ -398,7 +443,11 @@
                 nightDiscount = 0.5;
                 break;
             default:
+            }
+
         }
+
+        
     
         let total = price;
         
@@ -430,9 +479,9 @@
             <p><strong>預訂房型：</strong> <span class="highlight">${roomName}</span></p>
             <p><strong>入住晚數：</strong> ${nights} 晚 <span style="color: #666; font-size: 0.9em;">(${dateStart} ～ ${dateEnd})</span></p>
             <p><strong>入住貓數：</strong> ${cats} 隻</p>
-            <p><strong>每晚訂價：</strong> $${price}</p>
+            <p><strong>每晚訂價：</strong> ${price}</p>
             <hr>
-            <p>( ${roomName} + 多貓加價${addCatPrice} ) * 多晚折扣 * 共幾晚</p>
+            <p>( ${roomName} + 多貓加價 ${addCatPrice} ) * 折扣 * 共幾晚</p>
             <p><strong>每晚單價：</strong> ( ${price} + (${totalAddCatCount} * ${addCatPrice}) ) * ${nightDiscount} 去零頭 * ${nights}</p>
             <p>= ${total}</p>
 
@@ -468,7 +517,7 @@
 
     $("#test").click(function(){
         $.ajax({
-            url: 'https://mycathotelrepo.onrender.com/queryRoomCost',
+            url: 'http://localhost:8080/',
             type: "POST",
             dataType: 'json',
             success: function (data) {
