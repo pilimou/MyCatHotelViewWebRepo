@@ -402,7 +402,7 @@
     
         let total = price;
         
-        total = ( parseFloat(price) + totalAddCatCount ) * nightDiscount * nights;
+        total =  Math.floor(( parseFloat(price) + totalAddCatCount ) * nightDiscount / 10) * 10 * nights;
 
         // 4. 抓 Checkbox 選中的服務與加總金額
         let extraTotal = 0;
@@ -433,7 +433,7 @@
             <p><strong>每晚訂價：</strong> $${price}</p>
             <hr>
             <p>( ${roomName} + 多貓加價${addCatPrice} ) * 多晚折扣 * 共幾晚</p>
-            <p><strong>每晚單價：</strong> ( ${price} + (${totalAddCatCount} * ${addCatPrice}) ) * ${nightDiscount} * ${nights}</p>
+            <p><strong>每晚單價：</strong> ( ${price} + (${totalAddCatCount} * ${addCatPrice}) ) * ${nightDiscount} 去零頭 * ${nights}</p>
             <p>= ${total}</p>
 
             <!-- 這裡改為顯示「加購明細」，並將項目一行行排列 -->
