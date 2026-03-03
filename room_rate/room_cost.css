@@ -1,0 +1,81 @@
+/* 設定加購區塊為兩欄排版 */
+.services-grid {
+  display: grid;             /* 啟用網格佈局 */
+  grid-template-columns: repeat(3, 1fr); /* 左右平分兩欄，各佔 1/2 寬度 */
+  gap: 15px;                 /* 設定項目之間的間距 */
+  margin-top: 15px;          /* 與上方標題保持距離 */
+}
+
+/* 每一筆加購服務的卡片樣式 */
+.service-item {
+  display: flex;             /* 讓內容（勾選框、文字、價錢）橫向排列 */
+  align-items: center;       /* 垂直方向置中對齊 */
+  padding: 12px 15px;        /* 內部填充空間，讓區塊好點擊 */
+  border: 1px solid #ddd;    /* 淺灰色邊框 */
+  border-radius: 6px;        /* 圓角設定 */
+  background-color: #fff;    /* 背景白色 */
+  cursor: pointer;           /* 滑鼠移上去變手指圖示 */
+  transition: all 0.2s;      /* 增加顏色變化的過渡動畫 */
+}
+
+/* 當該項目內的 Checkbox 被選中時的樣式 */
+.service-item:has(input:checked) {
+  border-color: #ff9800;     /* 邊框變橘色 */
+  background-color: #fffcf5; /* 背景變極淡橘色 */
+  box-shadow: 0 2px 5px rgba(255,152,0,0.1); /* 增加一點點橘色發光感 */
+}
+
+/* 加購項目的名稱文字 */
+.service-text {
+  margin-left: 10px;         /* 與 Checkbox 保持一點距離 */
+  font-size: 15px;           /* 設定文字大小 */
+  color: #333;               /* 深灰色文字 */
+}
+
+/* 加購項目的價錢顯示（靠右對齊） */
+.service-price {
+  margin-left: auto;         /* 將此元素推擠到最右側 */
+  color: #d9534f;            /* 價錢用紅色提示感 */
+  font-weight: bold;         /* 加粗 */
+}
+
+/* 摘要區塊內的加購明細標題 */
+.summary-section-title {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+/* 加購明細的清單容器 */
+.summary-extras-list {
+    padding-left: 15px;      /* 向右縮進，增加層次感 */
+    border-left: 2px solid #eee; /* 左側淡灰色裝飾線 */
+    margin-bottom: 10px;
+}
+
+/* 每一行加購項目的樣式 */
+.summary-extra-item {
+    font-size: 14px;         /* 稍微縮小文字，區分主次 */
+    color: #555;             /* 使用深灰色 */
+    line-height: 1.6;        /* 增加行高，一行一行更清晰 */
+}
+
+/* 加購的小計金額 */
+.summary-extra-price {
+    text-align: left;       /* 靠左對齊 */
+    font-size: 13px;
+  
+    margin-top: 5px;
+    font-style: italic;      /* 斜體顯示，區分總金額 */
+}
+
+/* 總計金額的大字樣式 */
+.total-price {
+    font-size: 22px;
+    color: #d9534f;          /* 醒目的紅色 */
+    text-align: left;       /* 總價靠左對齊 */
+}
+
+.highlight {
+    color: #ff9800;          /* 房型名稱用橘色高亮 */
+    font-weight: bold;
+}

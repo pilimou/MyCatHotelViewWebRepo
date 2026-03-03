@@ -1,0 +1,87 @@
+/* 1. 最外層的大容器：確保內容不被置頂選單遮住 */
+.container {
+  margin-top: 80px;      /* 預留空間給固定在最上方的 navbar (60px + 20px 間距) */
+  padding: 0 20px;       /* 左右留白，避免內容貼齊螢幕邊緣 */
+}
+
+/* 2. 第一大區塊：設定為 Grid 網格佈局 */
+.grid-6 {
+  display: grid;         /* 啟用網格排版系統 */
+  grid-template-columns: repeat(6, 1fr); /* 將空間平均切分成 6 欄 (每欄寬度比例為 1) */
+  gap: 15px;             /* 設定小區塊之間的水平與垂直間距 */
+  margin-bottom: 30px;   /* 與下方第二大區塊保持距離 */
+}
+
+/* 3. 個別房型小區塊（卡片樣式） */
+.room-card {
+  border: 1px solid #ddd; /* 設定灰色邊框 */
+  padding: 15px;          /* 內部留白，避免文字貼齊邊框 */
+  background-color: #fff; /* 背景白色 */
+  border-radius: 8px;     /* 邊框圓角化，看起來比較柔和 */
+  display: flex;          /* 內部也啟用 Flexbox */
+  flex-direction: column; /* 讓內部的 4 個表單列「由上往下」垂直排列 */
+  gap: 12px;              /* 每行表單之間的垂直間距 */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* 增加輕微的陰影，產生立體感 */
+}
+
+/* 4. 每行表單的排版：讓標籤與輸入框對齊 */
+.form-row {
+  display: flex;          /* 橫向排列標籤與輸入框 */
+  align-items: center;    /* 垂直居中對齊 */
+  flex-wrap: wrap;        /* 當寬度不足時自動折行（例如日期選擇器太寬時） */
+  font-size: 14px;        /* 設定統一文字大小 */
+}
+
+/* 5. 房型名稱與剩餘間數的樣式 */
+.room-name {
+  font-weight: bold;      /* 字體加粗 */
+  margin-right: 8px;      /* 名字右邊留一點空格 */
+}
+.room-left {
+  color: #d9534f;         /* 剩餘間數用紅色（警示感） */
+  font-size: 12px;        /* 縮小文字 */
+}
+
+/* 6. 輸入框（Text Box）通用樣式 */
+input[type="text"], 
+input[type="number"], 
+input[type="date"] {
+  border: 1px solid #ccc; /* 灰色邊框 */
+  border-radius: 4px;     /* 小圓角 */
+  padding: 4px;           /* 內部稍微擴充，讓文字不擁擠 */
+}
+
+/* 7. 唯讀 (ReadOnly) 框的特殊處理 */
+input[readonly] {
+  background-color: #f5f5f5; /* 灰色背景，提示使用者不可點擊修改 */
+  color: #666;              /* 文字轉灰 */
+  cursor: not-allowed;      /* 滑鼠移上去顯示「禁止操作」符號 */
+  border: 1px solid #eee;   /* 邊框淡化 */
+  width: 60px;              /* 縮小價格與天數框的寬度 */
+  text-align: center;       /* 文字置中顯示 */
+}
+
+/* 8. 日期選擇器寬度優化 */
+.check-in, .check-out {
+  width: 100%;             /* 讓日期選擇器在小區塊內寬度全滿 */
+  margin-bottom: 5px;      /* 下方留一點間距 */
+  font-size: 12px;
+}
+
+/* 確保計算按鈕本身也有一些樣式 */
+.main-btn {
+  padding: 10px 25px;
+  background-color: #ff9800;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+
+/* 響應式：如果螢幕太小（如手機），6格會太擠，可以改成 3格 或 2格 */
+@media (max-width: 768px) {
+  .grid-6 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

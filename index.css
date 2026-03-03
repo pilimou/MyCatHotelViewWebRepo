@@ -1,0 +1,71 @@
+/* 強制 HTML 永遠顯示垂直滾動條的保留空間 */
+  html {
+    overflow-y: scroll; 
+  }
+
+/* 如果您不喜歡一直看到灰色的條，可以使用這個新屬性（現代瀏覽器支援） */
+/* 它會保留空間但只有在需要時才顯示捲軸 */
+  @supports (scrollbar-gutter: stable) {
+    html {
+      overflow-y: auto;
+      scrollbar-gutter: stable;
+    }
+  }
+
+    /* 1. 移除預設邊距 */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    
+
+    /* 2. 置頂選單容器 */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 60px;
+      background-color: #333;
+      display: flex;
+      justify-content: space-evenly; /* 等距排列 */
+      align-items: center;
+      z-index: 1000;
+    }
+
+    /* 3. 選單連結樣式 */
+    .nav-link {
+      color: white;
+      text-decoration: none;
+      flex: 1;
+      text-align: center;
+      line-height: 60px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    /* 4. 滑鼠移入變橘色 */
+    .nav-link:hover {
+      color: #ff9800;
+    }
+
+    /* 5. 分隔線 | */
+    .nav-link:not(:last-child)::after {
+      content: "|";
+      float: right;
+      color: #666;
+    }
+
+    /* 6. 當前頁面高亮 (手動修改每一頁的這部分) */
+    .nav-link.active {
+      color: #ff9800;
+      font-weight: bold;
+    }
+
+    /* 7. 內容區塊偏移 (避免被選單遮住) */
+    .container {
+      margin-top: 40px; 
+      padding: 20px;
+    }
+  

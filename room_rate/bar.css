@@ -1,0 +1,17 @@
+/* 灰色摺疊 BAR 樣式 */
+.collapse-bar {
+  background-color: #666;    /* 深灰色背景 */
+  color: white;              /* 白色文字 */
+  text-align: center;        /* 文字置中 */
+  padding: 10px 0;           /* 上下留白 */
+  cursor: pointer;           /* 滑鼠變手指，提示可點擊 */
+  font-size: 14px;           /* 字體大小 */
+  border-radius: 4px;        /* 輕微圓角 */
+  margin-bottom: 20px;       /* 與下方摘要區保持距離 */
+  transition: background 0.3s; /* 增加顏色變換動畫 */
+}
+
+/* 滑鼠移上去變色，讓使用者知道這是可以點的按鈕 */
+.collapse-bar:hover {
+  background-color: #444;    /* 變更深灰色 */
+}
