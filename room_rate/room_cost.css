@@ -7,7 +7,7 @@
 }
 
 /* 每一筆加購服務的卡片樣式 */
-.service-item {
+.service-item, .service-item2{
   display: flex;             /* 讓內容（勾選框、文字、價錢）橫向排列 */
   align-items: center;       /* 垂直方向置中對齊 */
   padding: 12px 15px;        /* 內部填充空間，讓區塊好點擊 */
@@ -19,7 +19,7 @@
 }
 
 /* 當該項目內的 Checkbox 被選中時的樣式 */
-.service-item:has(input:checked) {
+.service-item:has(input:checked), .service-item2:has(input:checked) {
   border-color: #ff9800;     /* 邊框變橘色 */
   background-color: #fffcf5; /* 背景變極淡橘色 */
   box-shadow: 0 2px 5px rgba(255,152,0,0.1); /* 增加一點點橘色發光感 */
