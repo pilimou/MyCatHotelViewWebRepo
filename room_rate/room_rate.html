@@ -3,10 +3,16 @@
 <head>
     <meta charset="UTF-8"/>
     <title>吉吉吉吉吉吉吉吉貓</title>
+    <link rel="stylesheet" type="text/css" href="room_rate_admin.css">
     <link rel="stylesheet" type="text/css" href="../index.css">
     <link rel="stylesheet" type="text/css" href="room_rate.css">
     <link rel="stylesheet" type="text/css" href="bar.css">
     <link rel="stylesheet" type="text/css" href="room_cost.css">
+    <style>
+        .hidden-data {
+            display: none;
+        }
+    </style>
 </head>
 <body>
 
@@ -36,7 +42,7 @@
                 <div class="grid-6">
 
                     <!-- 重複以下區塊 6 次，並修改 ID 與房型名稱 -->
-                    <div class="sub-item room-card">
+                    <div class="sub-item room-card" data-room-name="尊爵房">
                         <!-- 1. Radio Button + 房型 + 剩餘間數 -->
                         <div class="form-row">
                             <label>
@@ -51,13 +57,13 @@
                         <!-- 2. 定價 (唯讀) -->
                         <div class="form-row">
                             <label>定價：</label>
-                            <input type="text" class="price-box" value="3960" readonly>
+                            <input type="text" class="price-box" value="0" readonly>
                         </div>
 
                         <!-- 3. 入住貓數 (1~5) -->
                         <div class="form-row">
                             <label>入住貓數：</label>
-                            <input type="number" class="cat-count" min="1" max="6" value="1" >
+                            <input type="number" class="cat-count" min="1" max="1" value="1" >
                         </div>
 
                         <!-- 4. 日期選擇與天數計算 -->
@@ -75,10 +81,15 @@
                             </div>
                         </div>
 
+                        <div class="hidden-data">這裡是存放資料的地方，不會在頁面佔位。
+                            <input type="text" class="totalRoomCount" value="0" >
+                            <input type="text" class="freeCatQuota" value="0" >
+                        </div>
+
                         
                     </div>
 
-                    <div class="sub-item room-card">
+                    <div class="sub-item room-card" data-room-name="陽光房">
                         <!-- 1. Radio Button + 房型 + 剩餘間數 -->
                         <div class="form-row">
                             <label>
@@ -91,13 +102,13 @@
                         <!-- 2. 定價 (唯讀) -->
                         <div class="form-row">
                             <label>定價：</label>
-                            <input type="text" class="price-box" value="3960" readonly>
+                            <input type="text" class="price-box" value="0" readonly>
                         </div>
 
                         <!-- 3. 入住貓數 (1~5) -->
                         <div class="form-row">
                             <label>入住貓數：</label>
-                            <input type="number" class="cat-count" min="1" max="6" value="1" >
+                            <input type="number" class="cat-count" min="1" max="1" value="1" >
                         </div>
 
                         <!-- 4. 日期選擇與天數計算 -->
@@ -114,9 +125,13 @@
                                 <span class="percent-symbol">%</span>
                             </div>
                         </div>
+                        <div class="hidden-data">這裡是存放資料的地方，不會在頁面佔位。
+                            <input type="text" class="totalRoomCount" value="0" >
+                            <input type="text" class="freeCatQuota" value="0" >
+                        </div>
                     </div>
 
-                    <div class="sub-item room-card">
+                    <div class="sub-item room-card" data-room-name="小陽光">
                         <!-- 1. Radio Button + 房型 + 剩餘間數 -->
                         <div class="form-row">
                             <label>
@@ -129,13 +144,13 @@
                         <!-- 2. 定價 (唯讀) -->
                         <div class="form-row">
                             <label>定價：</label>
-                            <input type="text" class="price-box" value="3300" readonly>
+                            <input type="text" class="price-box" value="0" readonly>
                         </div>
 
                         <!-- 3. 入住貓數 (1~5) -->
                         <div class="form-row">
                             <label>入住貓數：</label>
-                            <input type="number" class="cat-count" min="1" max="6" value="1" >
+                            <input type="number" class="cat-count" min="1" max="1" value="1" >
                         </div>
 
                         <!-- 4. 日期選擇與天數計算 -->
@@ -152,9 +167,13 @@
                                 <span class="percent-symbol">%</span>
                             </div>
                         </div>
+                        <div class="hidden-data">這裡是存放資料的地方，不會在頁面佔位。
+                            <input type="text" class="totalRoomCount" value="0" >
+                            <input type="text" class="freeCatQuota" value="0" >
+                        </div>
                     </div>
 
-                    <div class="sub-item room-card">
+                    <div class="sub-item room-card" data-room-name="典雅窗">
                         <!-- 1. Radio Button + 房型 + 剩餘間數 -->
                         <div class="form-row">
                             <label>
@@ -167,13 +186,13 @@
                         <!-- 2. 定價 (唯讀) -->
                         <div class="form-row">
                             <label>定價：</label>
-                            <input type="text" class="price-box" value="2300" readonly>
+                            <input type="text" class="price-box" value="0" readonly>
                         </div>
 
                         <!-- 3. 入住貓數 (1~5) -->
                         <div class="form-row">
                             <label>入住貓數：</label>
-                            <input type="number" class="cat-count" min="1" max="4" value="1" >
+                            <input type="number" class="cat-count" min="1" max="1" value="1" >
                         </div>
 
                         <!-- 4. 日期選擇與天數計算 -->
@@ -190,9 +209,13 @@
                                 <span class="percent-symbol">%</span>
                             </div>
                         </div>
+                        <div class="hidden-data">這裡是存放資料的地方，不會在頁面佔位。
+                            <input type="text" class="totalRoomCount" value="0" >
+                            <input type="text" class="freeCatQuota" value="0" >
+                        </div>
                     </div>
 
-                    <div class="sub-item room-card">
+                    <div class="sub-item room-card" data-room-name="典雅房">
                         <!-- 1. Radio Button + 房型 + 剩餘間數 -->
                         <div class="form-row">
                             <label>
@@ -205,13 +228,13 @@
                         <!-- 2. 定價 (唯讀) -->
                         <div class="form-row">
                             <label>定價：</label>
-                            <input type="text" class="price-box" value="1900" readonly>
+                            <input type="text" class="price-box" value="0" readonly>
                         </div>
 
                         <!-- 3. 入住貓數 (1~5) -->
                         <div class="form-row">
                             <label>入住貓數：</label>
-                            <input type="number" class="cat-count" min="1" max="4" value="1" >
+                            <input type="number" class="cat-count" min="1" max="1" value="1" >
                         </div>
 
                         <!-- 4. 日期選擇與天數計算 -->
@@ -228,9 +251,13 @@
                                 <span class="percent-symbol">%</span>
                             </div>
                         </div>
+                        <div class="hidden-data">這裡是存放資料的地方，不會在頁面佔位。
+                            <input type="text" class="totalRoomCount" value="0" >
+                            <input type="text" class="freeCatQuota" value="0" >
+                        </div>
                     </div>
 
-                    <div class="sub-item room-card">
+                    <div class="sub-item room-card" data-room-name="精緻房">
                         <!-- 1. Radio Button + 房型 + 剩餘間數 -->
                         <div class="form-row">
                             <label>
@@ -243,13 +270,13 @@
                         <!-- 2. 定價 (唯讀) -->
                         <div class="form-row">
                             <label>定價：</label>
-                            <input type="text" class="price-box" value="1500" readonly>
+                            <input type="text" class="price-box" value="0" readonly>
                         </div>
 
                         <!-- 3. 入住貓數 (1~5) -->
                         <div class="form-row">
                             <label>入住貓數：</label>
-                            <input type="number" class="cat-count" min="1" max="2" value="1" >
+                            <input type="number" class="cat-count" min="1" max="1" value="1" >
                         </div>
 
                         <!-- 4. 日期選擇與天數計算 -->
@@ -265,6 +292,10 @@
                                 <input type="number" class="custom-discount" placeholder="">
                                 <span class="percent-symbol">%</span>
                             </div>
+                        </div>
+                        <div class="hidden-data">這裡是存放資料的地方，不會在頁面佔位。
+                            <input type="text" class="totalRoomCount" value="0" >
+                            <input type="text" class="freeCatQuota" value="0" >
                         </div>
                     </div>
                 
@@ -338,22 +369,357 @@
         <!-- 3. 計算按鈕 -->
         <div id="btn-container" style="text-align: center; margin: 20px;">
             <button id="calc-btn" class="main-btn">計算</button>
+            <button id="admin-btn" class="main-btn">後台</button>
         </div>
 
-        <!-- 新增：計算結果摘要區塊 (初始隱藏) -->
+        <!-- 計算結果摘要區塊 (初始隱藏) -->
         <div id="summary-section" class="section" style="display: none;">
             <h2>📋 計算結果</h2>
             <div id="summary-content">
                 <!-- 這裡會由 jQuery 動態填入資料 -->    
             </div>
         </div>
+
+        <!-- 後台系統區塊 (初始隱藏) -->
+        <div id="admin-section" class="section" style="display: none;">
+            <div id="admin-content">
+                <div id="admin-panel-container" class="container">
+                
+                    <header>
+                        <h1>房型與折扣管理</h1>
+                        <p>工作人員管理後台</p>
+                    </header>
+                
+                    <div class="space-y-6">
+                
+                        <!-- 區塊 1: 房型資料 -->
+                        <section class="admin-card">
+                            <div class="card-body">
+                                <div class="card-header">
+                                    <div>
+                                        <h2>1. 房型資料</h2>
+                                        <p>設定各房型基本資料</p>
+                                    </div>
+                                    <div class="button-group">
+                                        <button onclick="resetData('RoomTypes')" class="btn btn-gray">重置</button>
+                                        <button onclick="handleAction('update', 'RoomTypes')" class="btn btn-amber">修改</button>
+                                    </div>
+                                </div>
+                                <div id="room-types-content" class="content-area">
+                                    <div id="room-types-grid" class="room-types-grid">
+                                        <!-- 房型 1 -->
+                                        <div class="room-item-card" data-room-name="尊爵房" data-id="">
+                                            <div class="room-item-title">尊爵房</div>
+                                            <div class="room-field-row">
+                                                <span class="room-field-label">房型定價</span>
+                                                <input type="number" class="admin-room-types-input room-types-item-input room-types-edit-price" value="0">
+                                            </div>
+                                            <div class="room-field-row">
+                                                <span class="room-field-label">總間數</span>
+                                                <input type="number" class="admin-room-types-input room-types-item-input room-types-edit-total" value="0">
+                                            </div>
+                                            <div class="room-field-row">
+                                                <span class="room-field-label">最多貓數</span>
+                                                <input type="number" class="admin-room-types-input room-types-item-input room-types-edit-max" value="0">
+                                            </div>
+                                            <div class="room-field-row">
+                                                <span class="room-field-label">大於幾貓加價</span>
+                                                <input type="number" class="admin-room-types-input room-types-item-input room-types-edit-threshold"
+                                                    value="0">
+                                            </div>
+                                        </div>
+                                        <!-- 房型 2 -->
+                                        <div class="room-item-card" data-room-name="陽光房" data-id="">
+                                            <div class="room-item-title">陽光房</div>
+                                            <div class="room-field-row">
+                                                <span class="room-field-label">房型定價</span>
+                                                <input type="number" class="admin-room-types-input room-types-item-input room-types-edit-price" value="0">
+                                            </div>
+                                            <div class="room-field-row">
+                                                <span class="room-field-label">總間數</span>
+                                                <input type="number" class="admin-room-types-input room-types-item-input room-types-edit-total" value="0">
+                                            </div>
+                                            <div class="room-field-row">
+                                                <span class="room-field-label">最多貓數</span>
+                                                <input type="number" class="admin-room-types-input room-types-item-input room-types-edit-max" value="0">
+                                            </div>
+                                            <div class="room-field-row">
+                                                <span class="room-field-label">大於幾貓加價</span>
+                                                <input type="number" class="admin-room-types-input room-types-item-input room-types-edit-threshold"
+                                                    value="0">
+                                            </div>
+                                        </div>
+                                        <!-- 房型 3 -->
+                                        <div class="room-item-card" data-room-name="小陽光" data-id="">
+                                            <div class="room-item-title">小陽光</div>
+                                            <div class="room-field-row">
+                                                <span class="room-field-label">房型定價</span>
+                                                <input type="number" class="admin-room-types-input room-types-item-input room-types-edit-price" value="0">
+                                            </div>
+                                            <div class="room-field-row">
+                                                <span class="room-field-label">總間數</span>
+                                                <input type="number" class="admin-room-types-input room-types-item-input room-types-edit-total" value="0">
+                                            </div>
+                                            <div class="room-field-row">
+                                                <span class="room-field-label">最多貓數</span>
+                                                <input type="number" class="admin-room-types-input room-types-item-input room-types-edit-max" value="0">
+                                            </div>
+                                            <div class="room-field-row">
+                                                <span class="room-field-label">大於幾貓加價</span>
+                                                <input type="number" class="admin-room-types-input room-types-item-input room-types-edit-threshold"
+                                                    value="0">
+                                            </div>
+                                        </div>
+                                        <!-- 房型 4 -->
+                                        <div class="room-item-card" data-room-name="典雅窗" data-id="">
+                                            <div class="room-item-title">典雅窗</div>
+                                            <div class="room-field-row">
+                                                <span class="room-field-label">房型定價</span>
+                                                <input type="number" class="admin-room-types-input room-types-item-input room-types-edit-price" value="0">
+                                            </div>
+                                            <div class="room-field-row">
+                                                <span class="room-field-label">總間數</span>
+                                                <input type="number" class="admin-room-types-input room-types-item-input room-types-edit-total" value="0">
+                                            </div>
+                                            <div class="room-field-row">
+                                                <span class="room-field-label">最多貓數</span>
+                                                <input type="number" class="admin-room-types-input room-types-item-input room-types-edit-max" value="0">
+                                            </div>
+                                            <div class="room-field-row">
+                                                <span class="room-field-label">大於幾貓加價</span>
+                                                <input type="number" class="admin-room-types-input room-types-item-input room-types-edit-threshold"
+                                                    value="0">
+                                            </div>
+                                        </div>
+                                        <!-- 房型 5 -->
+                                        <div class="room-item-card" data-room-name="典雅房" data-id="">
+                                            <div class="room-item-title">典雅房</div>
+                                            <div class="room-field-row">
+                                                <span class="room-field-label">房型定價</span>
+                                                <input type="number" class="admin-room-types-input room-types-item-input room-types-edit-price" value="0">
+                                            </div>
+                                            <div class="room-field-row">
+                                                <span class="room-field-label">總間數</span>
+                                                <input type="number" class="admin-room-types-input room-types-item-input room-types-edit-total" value="0">
+                                            </div>
+                                            <div class="room-field-row">
+                                                <span class="room-field-label">最多貓數</span>
+                                                <input type="number" class="admin-room-types-input room-types-item-input room-types-edit-max" value="0">
+                                            </div>
+                                            <div class="room-field-row">
+                                                <span class="room-field-label">大於幾貓加價</span>
+                                                <input type="number" class="admin-room-types-input room-types-item-input room-types-edit-threshold"
+                                                    value="0">
+                                            </div>
+                                        </div>
+                                        <!-- 房型 6 -->
+                                        <div class="room-item-card" data-room-name="精緻房" data-id="">
+                                            <div class="room-item-title">精緻房</div>
+                                            <div class="room-field-row">
+                                                <span class="room-field-label">房型定價</span>
+                                                <input type="number" class="admin-room-types-input room-types-item-input room-types-edit-price" value="0">
+                                            </div>
+                                            <div class="room-field-row">
+                                                <span class="room-field-label">總間數</span>
+                                                <input type="number" class="admin-room-types-input room-types-item-input room-types-edit-total" value="0">
+                                            </div>
+                                            <div class="room-field-row">
+                                                <span class="room-field-label">最多貓數</span>
+                                                <input type="number" class="admin-room-types-input room-types-item-input room-types-edit-max" value="0">
+                                            </div>
+                                            <div class="room-field-row">
+                                                <span class="room-field-label">大於幾貓加價</span>
+                                                <input type="number" class="admin-room-types-input room-types-item-input room-types-edit-threshold"
+                                                    value="0">
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+
+                            </div>
+                        </section>
+                
+                        <!-- 區塊 2: 房型折扣 -->
+                        <section class="admin-card">
+                            <div class="card-body">
+                                <div class="card-header">
+                                    <div>
+                                        <h2>2. 房型折扣</h2>
+                                        <p>設定現有房型的折扣百分比</p>
+                                    </div>
+                                    <div class="button-group">
+                                        <button onclick="resetData('RoomDiscounts')" class="btn btn-gray">重置</button>
+                                        <button onclick="handleAction('update', 'RoomDiscounts')" class="btn btn-amber">修改</button>
+                                    </div>
+                                </div>
+                                <!-- 表單容器持有單一 UID -->
+                                <div id="room-discounts-form" class="content-area" data-uid="">
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="start-date">開始日期</label>
+                                            <input type="date" id="start-date" class="form-input">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="end-date">結束日期</label>
+                                            <input type="date" id="end-date" class="form-input">
+                                        </div>
+                                    </div>
+                
+                                    <div class="form-group">
+                                        <label>長住折扣設定</label>
+                                        <div class="discount-list">
+                                            <div class="discount-row">
+                                                <span class="discount-label">3 晚：</span>
+                                                <div class="input-with-unit">
+                                                    <input type="number" data-key="threeNight"
+                                                        class="form-input small-input night-discount" min="0" max="100" placeholder="0">
+                                                    <span class="unit-text">%</span>
+                                                </div>
+                                            </div>
+                                            <div class="discount-row">
+                                                <span class="discount-label">7 晚：</span>
+                                                <div class="input-with-unit">
+                                                    <input type="number" data-key="sevenNight"
+                                                        class="form-input small-input night-discount" min="0" max="100" placeholder="0">
+                                                    <span class="unit-text">%</span>
+                                                </div>
+                                            </div>
+                                            <div class="discount-row">
+                                                <span class="discount-label">14 晚：</span>
+                                                <div class="input-with-unit">
+                                                    <input type="number" data-key="fourteenNight"
+                                                        class="form-input small-input night-discount" min="0" max="100" placeholder="0">
+                                                    <span class="unit-text">%</span>
+                                                </div>
+                                            </div>
+                                            <div class="discount-row">
+                                                <span class="discount-label">21 晚：</span>
+                                                <div class="input-with-unit">
+                                                    <input type="number" data-key="twentyOneNight"
+                                                        class="form-input small-input night-discount" min="0" max="100" placeholder="0">
+                                                    <span class="unit-text">%</span>
+                                                </div>
+                                            </div>
+                                            <div class="discount-row">
+                                                <span class="discount-label">30 晚：</span>
+                                                <div class="input-with-unit">
+                                                    <input type="number" data-key="thirtyNight"
+                                                        class="form-input small-input night-discount" min="0" max="100" placeholder="0">
+                                                    <span class="unit-text">%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                
+                                    <div class="extra-charge-box">
+                                        <div class="form-group">
+                                            <label for="extra-cat-fee">多貓加價 (每隻/每晚)</label>
+                                            <div class="input-with-unit">
+                                                <span class="unit-text">$</span>
+                                                <input type="number" id="extra-cat-fee" class="form-input" style="width: 100px;" min="0"
+                                                    placeholder="0">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                
+                        <!-- 區塊 3: 每晚折抵 -->
+                        <section class="admin-card">
+                            <div class="card-body">
+                                <div class="card-header">
+                                    <div>
+                                        <h2>3. 每晚折抵</h2>
+                                        <p>依住宿天數設定每晚固定折抵金額</p>
+                                    </div>
+                                    <div class="button-group">
+                                        <button class="btn btn-blue" onclick="showAddRow('RoomCostEveryNights')">+新增</button>
+                                        <button class="btn btn-red" onclick="batchDelete('RoomCostEveryNights')">刪除</button>
+                                    </div>
+                                </div>
+                                <div class="content-area">
+                                    <div id="nightly-grid" class="admin-grid">
+                                        <!-- 動態渲染雙欄位 -->
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                
+                        <!-- 區塊 4: 最後折抵 -->
+                        <section class="admin-card">
+                            <div class="card-body">
+                                <div class="card-header">
+                                    <div>
+                                        <h2>4. 最後折抵</h2>
+                                        <p>設定最後的折抵</p>
+                                    </div>
+                                    <div class="button-group">
+                                        <div class="button-group">
+                                            <button class="btn btn-blue" onclick="showAddRow('RoomCosts')">+新增</button>
+                                            <button class="btn btn-red" onclick="batchDelete('RoomCosts')">刪除</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="content-area">
+                                    <div id="final-grid" class="admin-grid">
+                                        <!-- 動態渲染雙欄位 -->
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                
+                    </div>
+                
+                    
+                </div>
+                
+                <div id="toast" class="hidden translate-y-10">
+                    <span id="toast-msg"></span>
+                </div>
+            </div>
+        </div>
                
     </div>
+
+        <!-- 新增資料的 Modal -->
+    <div id="add-modal" class="modal-overlay hidden">
+        <div class="modal-container">
+            <div class="modal-title" id="modal-title-text">新增折扣項目</div>
+            <div class="modal-form">
+                <div style="display:flex; flex-direction:column; gap:4px;">
+                    <label style="font-size:0.85rem; color:#6b7280;">折扣名稱 (costName)</label>
+                    <input type="text" id="new-cost-name" class="admin-edit-input" placeholder="例如：學生證折抵">
+                </div>
+                <div style="display:flex; flex-direction:column; gap:4px;">
+                    <label style="font-size:0.85rem; color:#6b7280;">折扣金額 (costPrice)</label>
+                    <div style="display:flex; align-items:center; gap:8px;">
+                        <span>$</span>
+                        <input type="number" id="new-cost-price" class="admin-edit-input" style="width:100px;" placeholder="0">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button class="btn btn-gray" onclick="closeModal()">取消</button>
+                <button class="btn btn-blue" id="modal-confirm-btn">確定新增</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        內部系統 &copy; 2026 by pilimou
+    </footer>
+
+    
 
 
 </body>
 <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+<!-- 撈資料 渲染 -->
 <script src="room_cost.js"></script>
+
 <script>
     $(document).ready(function() {
         // 監聽所有日期欄位的變化
@@ -385,169 +751,19 @@
             $(this).closest('.room-card').css('border-color', '#ff9800');
         });
     });
+</script>
 
-    // 點擊「計算」按鈕
-    $('#calc-btn').on('click', function() {
-        // 1. 尋找被勾選的房型
-        let $selectedRoom = $('input[name="roomType"]:checked').closest('.room-card');
-
-        if ($selectedRoom.length === 0) {
-        alert("請先選擇一個房型！");
-        return;
-        }
-
-        // 2. 擷取該區塊輸入的資料
-        let roomName = $selectedRoom.find('.room-name').text();
-        let price = $selectedRoom.find('.price-box').val();
-        let cats = $selectedRoom.find('.cat-count').val();
-        let dateStart = $selectedRoom.find('.check-in').val();  // 入住日期
-        let dateEnd = $selectedRoom.find('.check-out').val();    // 退房日期
-        let nights = $selectedRoom.find('.night-count').val();
-        let rawDiscount = $selectedRoom.find('.custom-discount').val();
-        // const addCatCount =  
-        const addCatPrice = 250;
-
-        // 3. 檢查日期是否完整填寫
-        if (!dateStart || !dateEnd || nights <= 0) {
-            alert("請填寫完整的入住與退房日期！");
-        return;
-        }
-
-        // 4. 計算房型天數金額
-        // 4-1. 計算有無多貓加價數量
-        let totalAddCatCount = 0;
-        if (roomName.includes("尊爵房")){
-            totalAddCatCount = (cats <= 4) ? 0 : (cats - 4);
-        } else {
-            totalAddCatCount = (cats <= 1) ? 0 : (cats - 1);
-        }
-
-        // 4-2. 如果有自訂%數，轉換成折扣
-        let nightDiscount = 1;
-        if (rawDiscount !== "" && !isNaN(rawDiscount)) {
-            // 例如輸入 90，轉換成 0.9
-            nightDiscount = parseFloat(rawDiscount) / 100;
-        } else {
-
-            //如果沒有自訂，就看幾晚決定幾折
-            switch (true) {
-            case (nights < 3):
-                nightDiscount = 0.8;
-                break;
-            case (nights < 7):
-                nightDiscount = 0.8;
-                break;
-            case (nights < 14):
-                nightDiscount = 0.8;
-                break;
-            case (nights < 30):
-                nightDiscount = 0.75;
-                break;
-            case (nights > 30):
-                nightDiscount = 0.5;
-                break;
-            default:
-            }
-
-        }
-
-        
-        // 4-3. 計算房間總價
-        let total = price;
-        
-        total =  Math.floor(( parseFloat(price) + totalAddCatCount * addCatPrice ) * nightDiscount / 10) * 10 * nights;
-
-        // 4-4-1. 抓最後折扣 Checkbox 選中的服務與加總金額
-        let extraTotal = 0;
-        let extraNames = [];
-        let extrasHtml = ''; // 用來存放 HTML 格式的清單
-        
-        $('.service-item .extra-check:checked').each(function() {
-            extraTotal += parseFloat($(this).data('price'));
-            extraNames.push($(this).data('name') + " " + $(this).data('price'));
-        });
-
-        // 4-4-2. 抓每晚折扣 Checkbox 選中的服務與加總金額
-        let extraTotal2 = 0;
-        let extraNames2 = [];
-        let extrasHtml2 = '';
-        let totalNightDiscount = 0;
-
-        $('.service-item2 .extra-check:checked').each(function() {
-            totalNightDiscount = parseFloat($(this).data('price')) * nights
-            extraTotal2 += totalNightDiscount;
-            extraNames2.push($(this).data('name') + " " + $(this).data('price') + " * " + nights + "晚 = " + totalNightDiscount);
-        });
-
-        // 4-3. 組合敘述
-        if (extraNames2.length > 0) {
-            // 將每個每晚折扣選中的名稱包在 div 裡，達成自動換行
-            extrasHtml2 = extraNames2.map(name => `<div class="summary-extra-item">• ${name}</div>`).join('');
-        }
-
-        if (extraNames.length > 0) {
-            // 將每個最後折扣選中的名稱包在 div 裡，達成自動換行
-            extrasHtml = extraNames.map(name => `<div class="summary-extra-item">• ${name}</div>`).join('');
-        } 
-
-        if(!extraNames.length > 0 && !extraNames2.length > 0){
-             extrasHtml = '<div>無</div>';
-        } else {
-            extrasHtml = extrasHtml + extrasHtml2;
-        }
-       
-        extraTotal = extraTotal + extraTotal2;
-        let finalTotle = (total - extraTotal).toLocaleString('en-US');
-
-        // 5. 組合摘要文字
-
-        // 如果加貓數量 = 0 ， 就不要顯示
-        let shortMulaText = '';
-        let shortSumText = '';
-        if (totalAddCatCount > 0){
-            shortMulaText = `( ${roomName} + 多貓加價 ${addCatPrice} ) * 折扣 * 共幾晚`;
-            shortSumText = ` ( ${price} + (${totalAddCatCount} * ${addCatPrice}) ) * ${nightDiscount} 去零頭 * ${nights}`;
-        } else {
-            shortMulaText = ` ${roomName}  * 折扣 * 共幾晚`;
-            shortSumText = ` ${price} * ${nightDiscount} 去零頭 * ${nights}`;
-        }
-
-        const summaryHtml = `
-        <div class="summary-content-box">
-            <p><strong>預訂房型：</strong> <span class="highlight">${roomName}</span></p>
-            <p><strong>入住晚數：</strong> ${nights} 晚 <span style="color: #666; font-size: 0.9em;">(${dateStart} ～ ${dateEnd})</span></p>
-            <p><strong>入住貓數：</strong> ${cats} 隻</p>
-            <p><strong>每晚訂價：</strong> ${price}</p>
-            <hr>
-            <p>${shortMulaText}</p>
-            <p><strong>每晚單價：</strong> ${shortSumText}</p>
-            <p>= ${total}</p>
-
-            <!-- 這裡改為顯示「加購明細」，並將項目一行行排列 -->
-            <div class="summary-section-title"><strong>折扣：</strong></div>
-            <div class="summary-extras-list">
-                ${extrasHtml}
-                <div class="summary-extra-price">總計折：${extraTotal}</div>
-            </div>
-            <p>= ${total} - ${extraTotal} = ${finalTotle}</p>
-            <p style="font-size: 24px; color: #d9534f;"><strong>總計金額：$${finalTotle}</strong></p>
-        </div>
-        `;
-
-        // 執行摺疊動畫
-        $('#input-sections').slideUp(400); // 原始三個大區塊向上收合
-        $('#btn-container').hide();       // 隱藏計算按鈕
+<!-- 點擊 計算 -->
+<script src="room_calculate.js"></script>
+<!-- 點擊 後台 -->
+<script src="room_rate_admin.js"></script>
     
-        // 動畫完成後顯示灰色 BAR 與 摘要
-        $('#restore-bar').slideDown(200);
-        $('#summary-section').fadeIn(600); // 摘要區塊淡淡地出現
-        $('#summary-content').html(summaryHtml);
-    });
-
+<script>
     // B. 點擊「灰色 BAR」：回復顯示原始區塊
     $('#restore-bar').on('click', function() {
         $(this).slideUp(200);              // 灰色 BAR 自己收起來
-        $('#summary-section').hide();      // 隱藏摘要
+        $('#summary-section').hide();      // 隱藏計算摘要
+        $('#admin-section').hide();      // 隱藏後台系統
         
         $('#input-sections').slideDown(400); // 原始三個大區塊向下展開
         $('#btn-container').fadeIn();      // 重新顯示計算按鈕
@@ -559,7 +775,7 @@
             type: "POST",
             dataType: 'json',
             success: function (data) {
-                console.log(data[0].costName);
+                console.log(data);
                 $("#info").html("跨網域請求成功:"+data);
             },
             error: function (data) {
