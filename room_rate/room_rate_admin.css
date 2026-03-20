@@ -266,7 +266,7 @@
         }
 
         /* 表單元素 */
-        .form-row {
+        .admin-room-discounts-form-row {
             display: flex;
             flex-wrap: wrap;
             gap: 1.5rem;
