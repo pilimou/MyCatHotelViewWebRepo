@@ -46,7 +46,7 @@ function loadExtraServices() {
             if (data) {
                 initialDataStore.RoomTypes = data.roomTypes;
                 fillRoomTypes(initialDataStore.RoomTypes);
-
+                
                 initialDataStore.RoomDiscounts = data.roomDiscountsLists[0];
                 renderRoomDiscounts(initialDataStore.RoomDiscounts);
 
@@ -293,7 +293,7 @@ function closeModal() {
 */
 function confirmAddRow() {
     const name = $('#new-cost-name').val().trim();
-    const price = parseInt($('#new-cost-price').val(), 10) || 0;
+    const price = $('#new-cost-price').val() || 0;
 
     if (!name) {
         showToast("請輸入項目名稱");
