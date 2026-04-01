@@ -37,8 +37,6 @@
         // 4. 計算房型天數金額
         // 4-1. 計算有無多貓加價數量
         let totalAddCatCount = (cats - freeCatQuota) > 0 ? (cats - freeCatQuota) : 0;
-        console.log(freeCatQuota);
-       console.log(totalAddCatCount + "隻");
 
         // 4-2. 如果有自訂%數，轉換成折扣
         let nightDiscount = 100;
@@ -74,7 +72,8 @@
         // 4-3. 計算房間總價
         let total = price;
         
-        total =  Math.floor(( parseFloat(price) + totalAddCatCount * addCatPrice ) * nightDiscount / 10) * 10 * nights;
+        total = ( Math.floor(( parseFloat(price) * nightDiscount / 10 ) + Math.floor(( totalAddCatCount * addCatPrice ) * nightDiscount / 10) ) ) * 10 * nights;
+        //total =  Math.floor(( parseFloat(price) + totalAddCatCount * addCatPrice ) * nightDiscount / 10) * 10 * nights;
 
         // 4-4-1. 抓最後折扣 Checkbox 選中的服務與加總金額
         let extraTotal = 0;
@@ -124,10 +123,12 @@
         let shortMulaText = '';
         let shortSumText = '';
         if (totalAddCatCount > 0){
-            shortMulaText = `( ${roomName} + 多貓加價 ${addCatPrice} ) * 折扣 * 共幾晚`;
-            shortSumText = ` ( ${price} + (${totalAddCatCount} * ${addCatPrice}) ) * ${nightDiscount} 去零頭 * ${nights}`;
+            shortMulaText = ` [ ( ${roomName} * 折扣 ) 去零頭 + ( 多貓加價 ${addCatPrice} * 折扣 ) 去零頭 ] * 共幾晚`;
+            //shortMulaText = ` ( ${roomName} + 多貓加價 ${addCatPrice} ) * 折扣 * 共幾晚`;
+            shortSumText = ` [ ( ${price} * ${nightDiscount} ) 去零頭 + (${totalAddCatCount} * ${addCatPrice}) * ${nightDiscount} 去零頭 ] * ${nights} 晚`;
+            //shortSumText = ` ( ${price} + (${totalAddCatCount} * ${addCatPrice}) ) * ${nightDiscount} 去零頭 * ${nights}`;
         } else {
-            shortMulaText = ` ${roomName}  * 折扣 * 共幾晚`;
+            shortMulaText = ` ( ${roomName}  * 折扣 ) 去零頭 * 共幾晚`;
             shortSumText = ` ${price} * ${nightDiscount} 去零頭 * ${nights}`;
         }
 
@@ -139,16 +140,16 @@
             <p><strong>每晚訂價：</strong> ${price}</p>
             <hr>
             <p>${shortMulaText}</p>
-            <p><strong>每晚單價：</strong> ${shortSumText}</p>
-            <p>= ${total}</p>
+            <p><strong>住宿價錢：</strong> ${shortSumText}</p>
+            <p>= ${total.toLocaleString('en-US')}</p>
 
             <!-- 這裡改為顯示「加購明細」，並將項目一行行排列 -->
             <div class="summary-section-title"><strong>折扣：</strong></div>
             <div class="summary-extras-list">
                 ${extrasHtml}
-                <div class="summary-extra-price">總計折：${extraTotal}</div>
+                <div class="summary-extra-price">總計折：${extraTotal.toLocaleString('en-US')}</div>
             </div>
-            <p>= ${total} - ${extraTotal} = ${finalTotle}</p>
+            <p>= ${total.toLocaleString('en-US')} - ${extraTotal.toLocaleString('en-US')} = ${finalTotle}</p>
             <p style="font-size: 24px; color: #d9534f;"><strong>總計金額：$${finalTotle}</strong></p>
         </div>
         `;
