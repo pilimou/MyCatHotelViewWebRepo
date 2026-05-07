@@ -46,7 +46,7 @@
             //如果沒有自訂，就看幾晚決定幾折
             switch (true) {
             case (nights < 3):
-                nightDiscount = 100;
+                nightDiscount = initialDataStore.RoomDiscounts.oneAndTwoNight;
                 break;
             case (nights < 7):
                 nightDiscount = initialDataStore.RoomDiscounts.threeNight;
@@ -123,13 +123,13 @@
         let shortMulaText = '';
         let shortSumText = '';
         if (totalAddCatCount > 0){
-            shortMulaText = ` [ ( ${roomName} * 折扣 ) 去零頭 + ( 多貓加價 ${addCatPrice} * 折扣 ) 去零頭 ] * 共幾晚`;
+            shortMulaText = ` [ ( ${roomName} * 折扣 ) 去尾數 + ( 多貓加價 ${addCatPrice} * 折扣 ) 去尾數 ] * 共幾晚`;
             //shortMulaText = ` ( ${roomName} + 多貓加價 ${addCatPrice} ) * 折扣 * 共幾晚`;
-            shortSumText = ` [ ( ${price} * ${nightDiscount} ) 去零頭 + (${totalAddCatCount} * ${addCatPrice}) * ${nightDiscount} 去零頭 ] * ${nights} 晚`;
-            //shortSumText = ` ( ${price} + (${totalAddCatCount} * ${addCatPrice}) ) * ${nightDiscount} 去零頭 * ${nights}`;
+            shortSumText = ` [ ( ${price} * ${nightDiscount} ) 去尾數 + (${totalAddCatCount} * ${addCatPrice}) * ${nightDiscount} 去尾數 ] * ${nights} 晚`;
+            //shortSumText = ` ( ${price} + (${totalAddCatCount} * ${addCatPrice}) ) * ${nightDiscount} 去尾數 * ${nights}`;
         } else {
-            shortMulaText = ` ( ${roomName}  * 折扣 ) 去零頭 * 共幾晚`;
-            shortSumText = ` ${price} * ${nightDiscount} 去零頭 * ${nights}`;
+            shortMulaText = ` ( ${roomName}  * 折扣 ) 去尾數 * 共幾晚`;
+            shortSumText = ` ${price} * ${nightDiscount} 去尾數 * ${nights}`;
         }
 
         const summaryHtml = `
